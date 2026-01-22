@@ -6,7 +6,7 @@ import productDemo from "./productDemo.jpeg";
 
 export default function Home() {
   const isLoggedIn = true;
-  const name = "Tuan";
+  const name = "Tuantong";
   const age = 19;
 
   const canVote = age > 18 ? "Yes" : "No";
