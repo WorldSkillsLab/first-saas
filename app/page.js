@@ -34,7 +34,7 @@ export default function Home() {
               Pricing
             </a>
             <a className="link link-hover" href="#faq">
-              FAQ
+              FAQVVVV
             </a>
           </div>
 
