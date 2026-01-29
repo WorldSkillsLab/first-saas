@@ -10,7 +10,7 @@ const config = {
     Resend({
       apiKey: process.env.RESEND_KEY,
       from: "noreply@worldskillslab.com",
-      name: "Email",
+      name: "email",
     }),
 
     Google({

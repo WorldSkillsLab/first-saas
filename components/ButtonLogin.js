@@ -18,9 +18,9 @@ const ButtonLogin = ({ session, extraStyle }) => {
   return (
     <button
       className={`btn btn-primary ${extraStyle ? extraStyle : ""}`}
-      onClick={() => {
-        signIn(undefined, { callbackUrl: dashboardUrl });
-      }}
+      onClick={() => 
+        signIn(undefined, { callbackUrl: dashboardUrl })
+      }
     >
       Get started
     </button>
