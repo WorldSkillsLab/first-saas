@@ -3,42 +3,32 @@ import ListItem from "@/components/ListItem";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "./productDemo.jpeg";
+import { auth } from "@/auth";
 
-export default function Home() {
-  const isLoggedIn = true;
-  const name = "Tuan";
-  const age = 19;
 
-  const canVote = age > 18 ? "Yes" : "No";
-  console.log("Can Vote:", canVote);
+export default async function Home() {
 
-  const greeting = `Hello ${isLoggedIn ? name : "Guest"}!`;
-  console.log(greeting);
+  const session = await auth();
+  console.log("Session:", session);
 
-  const pricingFeatures = [
-    "Collect customer feedback",
-    "Unlimited feedback boards",
-    "Admin dashboard",
-    "24/7 Support",
-  ];
 
   return (
     <main>
       {/* HEADER */}
       <section className="bg-base-200">
         <div className="max-w-xl mx-auto bg-base-200 flex justify-between items-center px-8 py-2">
-          <div className="font-bold">CodeFast SaaS</div>
+          <div className="font-bold">World Skills Lab SaaS</div>
 
           <div className="space-x-4">
             <a className="link link-hover" href="#pricing">
               Pricing
             </a>
             <a className="link link-hover" href="#faq">
-              FAQVVVV
+              FAQ
             </a>
           </div>
 
-          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          <ButtonLogin session={session}/>
         </div>
       </section>
 
@@ -58,7 +48,7 @@ export default function Home() {
           products your customers will love.
         </p>
 
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        <ButtonLogin session={session} />
       </section>
 
       {/* PRICING */}
@@ -87,11 +77,7 @@ export default function Home() {
               <ListItem>24/7 Support</ListItem>
             </ul>
 
-            <ButtonLogin
-              isLoggedIn={isLoggedIn}
-              name={name}
-              extraStyle="w-full"
-            />
+            <ButtonLogin session={session} />
           </div>
         </div>
       </section>
